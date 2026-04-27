@@ -1,0 +1,302 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #0b61ff;
+  --color-primary-light: #e6f0ff;
+  --color-primary-hover: #084acb;
+
+  --color-bg: #f7f9fb;
+  --color-bg-secondary: #f1f5f9;
+  --color-bg-code: #334155;
+  --color-bg-code-header: #0f1724;
+  --color-card: #ffffff;
+
+  --color-text-body: #0f1724;
+  --color-text-secondary: #8a95a6;
+  --color-border: #e5e7eb;
+
+  --color-border-disabled: #d1d5db;
+  --color-disabled: #8a95a6;
+  --color-bg-disabled: #e6eef8;
+  --color-white: #ffffff;
+
+  --color-information: #4a61e3;
+  --color-warning: #f59e0b;
+  --color-success: #12b981;
+  --color-error: #ef4444;
+  --color-bg-success: #ecfdf6;
+  --color-bg-warning: #fff7ed;
+  --color-bg-information: #f1f3fd;
+  --color-bg-error: #fdf3f3;
+  --color-border-success: #a9f1d4;
+  --color-border-information: #c5d0f8;
+  --color-border-warning: #fed7aa;
+  --color-border-error: #faced0;
+
+  scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+.dark {
+  --color-primary: #3b82f6;
+  --color-primary-light: rgba(59, 130, 246, 0.1);
+  --color-primary-hover: #2563eb;
+
+  --color-bg: #0b0f1a;
+  --color-bg-secondary: #161c2d;
+  --color-card: #1e293b;
+
+  --color-text-body: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-border: #334155;
+
+  --color-border-disabled: #475569;
+  --color-bg-disabled: #1e293b;
+
+  --color-bg-success: rgba(18, 185, 129, 0.1);
+  --color-bg-warning: rgba(245, 158, 11, 0.1);
+  --color-bg-information: rgba(74, 97, 227, 0.1);
+  --color-bg-error: rgba(239, 68, 68, 0.1);
+
+  --color-border-success: rgba(18, 185, 129, 0.2);
+  --color-border-information: rgba(74, 97, 227, 0.2);
+  --color-border-warning: rgba(245, 158, 11, 0.2);
+  --color-border-error: rgba(239, 68, 68, 0.2);
+
+  scrollbar-color: #475569 #0f172a;
+}
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-primary-light: var(--color-primary-light);
+  --color-primary-hover: var(--color-primary-hover);
+
+  --color-bg: var(--color-bg);
+  --color-bg-secondary: var(--color-bg-secondary);
+  --color-bg-code: var(--color-bg-code);
+  --color-bg-code-header: var(--color-bg-code-header);
+  --color-card: var(--color-card);
+
+  --color-text-body: var(--color-text-body);
+  --color-text-secondary: var(--color-text-secondary);
+
+  --color-border: var(--color-border);
+
+  --color-border-disabled: var(--color-border-disabled);
+  --color-disabled: var(--color-disabled);
+  --color-bg-disabled: var(--color-bg-disabled);
+  --color-white: var(--color-white);
+
+  --color-information: var(--color-information);
+  --color-warning: var(--color-warning);
+  --color-success: var(--color-success);
+  --color-error: var(--color-error);
+  --color-bg-success: var(--color-bg-success);
+  --color-bg-warning: var(--color-bg-warning);
+  --color-bg-information: var(--color-bg-information);
+  --color-bg-error: var(--color-bg-error);
+  --color-border-success: var(--color-border-success);
+  --color-border-information: var(--color-border-information);
+  --color-border-warning: var(--color-border-warning);
+  --color-border-error: var(--color-border-error);
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: var(--color-text-body);
+  background-color: var(--color-bg);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100svh;
+}
+
+.p-dropdown-label {
+  color: var(--color-text-body) !important;
+}
+
+.p-dropdown-panel {
+  background-color: var(--color-card);
+  margin-top: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  box-shadow:
+    0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  margin-top: 8px;
+  overflow: hidden;
+  padding: 0.25rem 0;
+}
+
+.p-dropdown-items {
+  padding: 0;
+}
+
+.p-dropdown-item {
+  color: var(--color-text-body);
+  background-color: var(--color-card);
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  /* transition: all 0.2s ease; */
+  margin: 0;
+}
+
+.p-dropdown-item:hover {
+  background-color: var(--color-primary-light);
+}
+
+/* .dark .p-dropdown-item:hover {
+  background-color: var(--color-border);
+} */
+
+.p-dropdown-item.p-highlight {
+  background-color: color-mix(
+    in oklab,
+    var(--color-primary-light) 50%,
+    transparent
+  );
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.p-dropdown-item.p-highlight:hover {
+  background-color: var(--color-primary-light);
+}
+
+.btn-spinner svg circle {
+  stroke: var(--color-disabled) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3.75rem;
+  line-height: 4rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+}
+
+h3 {
+  font-size: 2.2rem;
+  line-height: 3rem;
+}
+
+h4 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+}
+
+h6 {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+p {
+  /* font-size: 1rem; */
+  /* line-height: 1.1; */
+}
+
+@media (width <= 640px) {
+  h1 {
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+    line-height: 3rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  h4 {
+    font-size: 1.75rem;
+    line-height: 2rem;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+  }
+
+  h6 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+
+  /* p {
+    font-size: 1rem;
+    line-height: 1.1;
+  } */
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slow-pulse {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-slow-pulse {
+  animation: slow-pulse 4s ease-in-out infinite;
+}
+
+a {
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  color: var(--color-primary);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--color-primary-hover);
+}
