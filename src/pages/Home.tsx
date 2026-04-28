@@ -67,7 +67,7 @@ function Home() {
     if (settings.secretDetection) total += 10;
     if (settings.correctnessIssues) total += 5;
     if (settings.deepAnalysis) total += 142;
-    else total += 88;
+    else total += 87;
     return total;
   };
 
