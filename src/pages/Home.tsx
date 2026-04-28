@@ -238,7 +238,7 @@ function Home() {
 
     setIsLoading(true);
     axios
-      .post("http://localhost:8081/api/analyze", formData, {
+      .post("http://194.182.80.146:8081/api/analyze", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
