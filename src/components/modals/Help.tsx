@@ -39,20 +39,20 @@ function Help() {
     },
   ];
 
-  const categories = [
+  const docs = [
     {
       title: "Getting Started",
       desc: "Learn the basics of static analysis and how to run your first scan.",
       icon: FiBook,
       color: "bg-information/10 text-information",
-      link: "https://git.kpi.fei.tuke.sk/kpi-zp/2026/bp.isabella.salon/workspace/static-analyzer/-/blob/main/docs/getting-started.md",
+      link: "https://github.com/bella-66/static-analyzer-web/blob/main/docs/getting-started.md",
     },
     {
       title: "Security Rules",
       desc: "Detailed documentation for all the security rules and CWEs we detect.",
       icon: FiCommand,
       color: "bg-primary/10 text-primary",
-      link: "https://git.kpi.fei.tuke.sk/kpi-zp/2026/bp.isabella.salon/workspace/static-analyzer/-/blob/main/docs/security-rules.md",
+      link: "https://github.com/bella-66/static-analyzer-web/blob/main/docs/security-rules.md",
     },
   ];
 
@@ -64,7 +64,7 @@ function Help() {
 
   const query = searchQuery.toLowerCase();
 
-  const filteredCategories = categories.filter(
+  const filteredDocs = docs.filter(
     (c) =>
       c.title.toLowerCase().includes(query) ||
       c.desc.toLowerCase().includes(query),
@@ -114,18 +114,17 @@ function Help() {
         </div>
       </div>
 
-      {filteredCategories.length === 0 &&
-        filteredSpecificRules.length === 0 && (
-          <div className="py-12 text-center text-text-secondary bg-bg-secondary/20 rounded-2xl border border-border">
-            <FiSearch className="mx-auto text-3xl mb-3 opacity-20" />
-            <p className="text-sm font-medium">
-              No results found for "{searchQuery}"
-            </p>
-            <p className="text-xs mt-1 opacity-60">
-              Try searching for different keywords or checking for typos.
-            </p>
-          </div>
-        )}
+      {filteredDocs.length === 0 && filteredSpecificRules.length === 0 && (
+        <div className="py-12 text-center text-text-secondary bg-bg-secondary/20 rounded-2xl border border-border">
+          <FiSearch className="mx-auto text-3xl mb-3 opacity-20" />
+          <p className="text-sm font-medium">
+            No results found for "{searchQuery}"
+          </p>
+          <p className="text-xs mt-1 opacity-60">
+            Try searching for different keywords or checking for typos.
+          </p>
+        </div>
+      )}
 
       {query && filteredSpecificRules.length > 0 && (
         <div className="space-y-4">
@@ -229,9 +228,9 @@ function Help() {
         </div>
       )}
 
-      {filteredCategories.length > 0 && (
+      {filteredDocs.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {filteredCategories.map((cat, i) => (
+          {filteredDocs.map((cat, i) => (
             <a
               key={i}
               href={cat.link}

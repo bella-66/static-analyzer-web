@@ -8,7 +8,7 @@ This guide explains how to use the Static Analyzer to run your first security sc
 
 You can access the application here:
 
-👉 https://your-domain.com
+👉 https://static-analyzer-web.vercel.app/
 
 No installation is required.
 
