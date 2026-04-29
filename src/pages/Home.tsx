@@ -573,6 +573,7 @@ function Home() {
                     placeholder="Select Profile"
                     options={scanProfile}
                     optionLabel="name"
+                    panelClassName="scan-dropdown-panel"
                     className="w-full border-border! bg-card! rounded-xl! py-1! text-error!"
                   />
                 </div>

@@ -149,6 +149,10 @@ body {
   margin: 0;
 }
 
+.scan-dropdown-panel .p-dropdown-item {
+  padding: 0.725rem 1rem;
+}
+
 .p-dropdown-item:hover {
   background-color: var(--color-primary-light);
 }

@@ -196,7 +196,7 @@ function ResultCard({ result }: ResultCardProps) {
               <h6 className="font-bold text-text-body">Suggested Fix</h6>
             </div>
 
-            <div className="bg-emerald-50/50 in-[.dark]:bg-emerald-950/20 border border-emerald-200 in-[.dark]:border-emerald-800/50 rounded-xl p-5 space-y-4">
+            <div className="bg-emerald-50/80 in-[.dark]:bg-emerald-950/20 border border-emerald-200 in-[.dark]:border-emerald-800/50 rounded-xl p-5 space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-medium uppercase tracking-widest text-emerald-600 in-[.dark]:text-emerald-400 bg-emerald-100 in-[.dark]:bg-emerald-900/40 px-2 py-1 rounded">
                   Safe Sample Code
@@ -205,7 +205,7 @@ function ResultCard({ result }: ResultCardProps) {
                   onClick={() =>
                     navigator.clipboard.writeText(result.extra.fix || "")
                   }
-                  className="text-xs cursor-pointer font-semibold text-emerald-600 hover:text-emerald-700 in-[.dark]:text-emerald-400 hover:underline transition-all"
+                  className="text-xs cursor-pointer font-semibold text-emerald-600 hover:text-emerald-700 in-[.dark]:text-emerald-400 in-[.dark]:hover:text-emerald-600 hover:underline transition-all"
                 >
                   Copy Fix
                 </button>

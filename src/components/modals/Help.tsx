@@ -101,7 +101,7 @@ function Help() {
           value={searchQuery}
           ref={inputRef}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Search through 100+ documentation guides and rules..."
+          placeholder="Search through 100+ rules..."
           className="w-full bg-bg-secondary border border-border rounded-2xl py-4 pl-12 pr-4 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm font-medium placeholder:font-normal placeholder:text-text-secondary/60"
         />
         <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-1.5 opacity-40 group-focus-within:opacity-100 transition-opacity">
