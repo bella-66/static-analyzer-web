@@ -107,7 +107,7 @@ function Home() {
       );
       return;
     }
-
+    // console.log(files);
     setSelectedFiles(files);
   };
 
@@ -121,13 +121,46 @@ function Home() {
     setIsDragging(false);
   };
 
-  const handleDrop = (e: React.DragEvent) => {
+  const handleDrop = async (e: React.DragEvent) => {
     e.preventDefault();
     setIsDragging(false);
-    // console.log(e.dataTransfer.files);
-    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      handleFileChange(Array.from(e.dataTransfer.files));
-    }
+    const items = e.dataTransfer.items;
+    if (!items) return;
+
+    const files: File[] = [];
+
+    const traverseFileTree = (entry: any, path = ""): Promise<void> => {
+      return new Promise((resolve) => {
+        if (entry.isFile) {
+          entry.file((file: File) => {
+            file = new File([file], path + file.name);
+            files.push(file);
+            resolve();
+          });
+        } else if (entry.isDirectory) {
+          const reader = entry.createReader();
+          reader.readEntries(async (entries: any[]) => {
+            await Promise.all(
+              entries.map((ent) =>
+                traverseFileTree(ent, path + entry.name + "/"),
+              ),
+            );
+            resolve();
+          });
+        }
+      });
+    };
+
+    await Promise.all(
+      Array.from(items).map((item: any) => {
+        const entry = item.webkitGetAsEntry();
+        if (entry) {
+          return traverseFileTree(entry);
+        }
+        return Promise.resolve();
+      }),
+    );
+    handleFileChange(files);
   };
 
   const handleChangeFilters = (value: string, key: keyof Filters) => {
@@ -271,7 +304,7 @@ function Home() {
         setSelectedResult(0);
       })
       .catch((err) => {
-        console.log("err", err);
+        // console.log("err", err);
         const baseMessage =
           err?.response?.data ||
           err?.message ||
@@ -308,7 +341,7 @@ function Home() {
     <div>
       <Snackbar
         open={errorToast.open}
-        autoHideDuration={4500}
+        autoHideDuration={4000}
         onClose={() => setErrorToast({ ...errorToast, open: false })}
         anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
       >
