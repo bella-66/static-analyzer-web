@@ -51,7 +51,7 @@ After processing, you will receive a list of detected vulnerabilities:
 
 ## ⚙️ Supported analysis
 
-The hosted analyzer detects:
+The static analyzer detects:
 
 - Hardcoded secrets
 - Injection vulnerabilities
