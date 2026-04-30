@@ -80,7 +80,12 @@ function Home() {
       const path = file.webkitRelativePath || file.name;
       const pathParts = path.split("/");
       return !pathParts.some(
-        (part) => part === ".git" || part === "node_modules",
+        (part) =>
+          part === ".git" ||
+          part === "node_modules" ||
+          part === "target" ||
+          part === "build" ||
+          part === ".idea",
       );
     });
 
