@@ -1,0 +1,19 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" rx="48" fill="#0F172A"/>
+  
+  <!-- Shield -->
+  <path d="M128 40L200 72V124C200 176 167 219 128 232C89 219 56 176 56 124V72L128 40Z"
+        fill="#1E293B" stroke="#38BDF8" stroke-width="8"/>
+
+  <!-- Code brackets -->
+  <path d="M102 98L78 128L102 158"
+        stroke="#38BDF8" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <path d="M154 98L178 128L154 158"
+        stroke="#38BDF8" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Bug / Vulnerability symbol -->
+  <circle cx="128" cy="128" r="18" fill="#22C55E"/>
+  <path d="M128 104V152" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
+  <path d="M104 128H152" stroke="#0F172A" stroke-width="6" stroke-linecap="round"/>
+</svg>

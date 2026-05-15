@@ -74,7 +74,7 @@ function Home() {
   const handleFileChange = (file: File[] | File) => {
     let files = Array.isArray(file) ? file : [file];
     const MAX_TOTAL_SIZE = 200 * 1024 * 1024; // 200MB
-    const MAX_PART_COUNT = 500;
+    const MAX_PART_COUNT = 300;
 
     files = files.filter((file) => {
       const path = file.webkitRelativePath || file.name;
@@ -112,7 +112,6 @@ function Home() {
       );
       return;
     }
-    // console.log(files);
     setSelectedFiles(files);
   };
 
@@ -282,7 +281,6 @@ function Home() {
         },
       })
       .then((res) => {
-        // console.log("res", res);
         let results: any = res.data.results;
         if (!results) {
           handleError("An unexpected error occurred. Please try again.");
@@ -309,7 +307,6 @@ function Home() {
         setSelectedResult(0);
       })
       .catch((err) => {
-        // console.log("err", err);
         const baseMessage =
           err?.response?.data ||
           err?.message ||
