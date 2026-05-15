@@ -11,7 +11,7 @@ function Navbar({ onSettingsClick, onHelpClick }: NavbarProps) {
     <div className="border-b border-border">
       <div className="container py-6 mx-auto flex flex-col md:flex-row items-center justify-between gap-x-3 gap-y-4">
         <div className="flex items-center gap-2 flex-wrap justify-center">
-          <div className="text-card">
+          <div className="text-card -mt-1">
             <svg
               width={48}
               height={48}
