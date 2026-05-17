@@ -79,7 +79,7 @@ function ResultsList({
           <Dropdown
             value={filters.vulnClass}
             onChange={(e) => handleChangeFilters(e.value, "vulnClass")}
-            placeholder="Vulnerability Class"
+            placeholder="Category"
             options={vulnerabilityClasses}
             showClear
             optionLabel="label"

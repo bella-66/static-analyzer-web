@@ -284,6 +284,7 @@ function Home() {
       .then((res) => {
         let results: any = res.data.results;
         if (!results) {
+          setSelectedResult(null);
           handleError("An unexpected error occurred. Please try again.");
           return;
         }
