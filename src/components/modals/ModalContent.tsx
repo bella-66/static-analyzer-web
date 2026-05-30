@@ -29,7 +29,7 @@ function ModalContent({ onClose }: ModalContentProps) {
   const [active, setActive] = useState<SettingOption>("general");
 
   return (
-    <div className="flex flex-col md:grid md:grow md:grid-cols-[280px_1fr] bg-bg mx-4 md:mx-10 w-[95vw] md:w-[90vw] max-w-275 h-[95vh] md:h-[85vh] rounded-xl overflow-hidden border border-border">
+    <div className="flex flex-col md:grid md:grow md:grid-cols-[280px_1fr] bg-bg mx-4 md:mx-10 w-[95vw] md:w-[90vw] max-w-275 h-[95dvh] md:h-[85dvh] rounded-xl overflow-hidden border border-border">
       <SettingsMenu active={active} setActive={setActive} />
 
       <ModalPageContent

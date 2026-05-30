@@ -10,7 +10,7 @@ function Navbar({ onSettingsClick, onHelpClick }: NavbarProps) {
   return (
     <div className="border-b border-border">
       <div className="container py-6 mx-auto flex flex-col md:flex-row items-center justify-between gap-x-3 gap-y-4">
-        <div className="flex items-center gap-2 flex-wrap justify-center">
+        <div className="flex items-center gap-2 flex-wrap px-2 justify-center">
           <div className="text-card -mt-1">
             <svg
               width={48}
@@ -57,7 +57,9 @@ function Navbar({ onSettingsClick, onHelpClick }: NavbarProps) {
               />
             </svg>
           </div>
-          <p className="font-semibold text-2xl">Java Vulnerability Scanner</p>
+          <p className="font-semibold text-2xl text-center">
+            Java Vulnerability Scanner
+          </p>
         </div>
         <div className="flex items-center gap-4">
           <Button
